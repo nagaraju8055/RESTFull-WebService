@@ -1,0 +1,52 @@
+2020-08-27 00:57:02,517 INFO c.o.a.PersonDetailsApplicationTests [main] Starting PersonDetailsApplicationTests on DESKTOP-AFNVR1S with PID 9980 (started by pc in C:\Users\pc\Documents\workspace-spring-tool-suite-4-4.2.0.RELEASE\PersonDetails)
+2020-08-27 00:57:02,542 DEBUG c.o.a.PersonDetailsApplicationTests [main] Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-08-27 00:57:02,543 INFO c.o.a.PersonDetailsApplicationTests [main] No active profile set, falling back to default profiles: default
+2020-08-27 00:57:13,656 DEBUG o.h.SQL [task-1] drop table if exists address CASCADE 
+2020-08-27 00:57:13,661 DEBUG o.h.SQL [task-1] drop table if exists persons CASCADE 
+2020-08-27 00:57:13,662 DEBUG o.h.SQL [task-1] drop sequence if exists hibernate_sequence
+2020-08-27 00:57:13,670 DEBUG o.h.SQL [task-1] create sequence hibernate_sequence start with 1 increment by 1
+2020-08-27 00:57:13,676 DEBUG o.h.SQL [task-1] create table address (id bigint not null, city varchar(255), person_id bigint, postal_code varchar(255), state varchar(255), street varchar(255), primary key (id))
+2020-08-27 00:57:13,689 DEBUG o.h.SQL [task-1] create table persons (id bigint not null, first_name varchar(255), last_name varchar(255), primary key (id))
+2020-08-27 00:57:16,052 INFO c.o.a.PersonDetailsApplicationTests [main] Started PersonDetailsApplicationTests in 14.306 seconds (JVM running for 19.733)
+2020-08-27 00:57:17,577 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-1] entering getPersonById(long)
+2020-08-27 00:57:17,577 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-1] id: 1
+2020-08-27 00:57:17,630 DEBUG o.h.SQL [http-nio-auto-1-exec-1] select person0_.id as id1_1_0_, person0_.first_name as first_na2_1_0_, person0_.last_name as last_nam3_1_0_ from persons person0_ where person0_.id=?
+2020-08-27 00:57:17,654 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-1] exiting getPersonById()
+2020-08-27 00:57:17,657 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-1] returning: <404 NOT_FOUND Not Found,[]>
+2020-08-27 00:57:17,812 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-2] entering getAllPersons(String)
+2020-08-27 00:57:17,813 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-2] title: "null"
+2020-08-27 00:57:18,103 DEBUG o.h.SQL [http-nio-auto-1-exec-2] select person0_.id as id1_1_, person0_.first_name as first_na2_1_, person0_.last_name as last_nam3_1_ from persons person0_
+2020-08-27 00:57:18,114 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-2] exiting getAllPersons()
+2020-08-27 00:57:18,114 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-2] returning: <204 NO_CONTENT No Content,[]>
+2020-08-27 00:57:18,201 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-3] entering createPerson(Person)
+2020-08-27 00:57:18,201 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-3] Person: com.org.app.model.Person@73e65116
+2020-08-27 00:57:18,224 DEBUG o.h.SQL [http-nio-auto-1-exec-3] call next value for hibernate_sequence
+2020-08-27 00:57:18,284 DEBUG o.h.SQL [http-nio-auto-1-exec-3] insert into persons (first_name, last_name, id) values (?, ?, ?)
+2020-08-27 00:57:18,294 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-3] Create Person details ::
+2020-08-27 00:57:18,294 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-3] exiting createPerson()
+2020-08-27 00:57:18,294 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-3] returning: <201 CREATED Created,com.org.app.model.Person@73e65116,[]>
+2020-08-27 00:57:18,343 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-4] entering getPersonById(long)
+2020-08-27 00:57:18,343 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-4] id: 1
+2020-08-27 00:57:18,344 DEBUG o.h.SQL [http-nio-auto-1-exec-4] select person0_.id as id1_1_0_, person0_.first_name as first_na2_1_0_, person0_.last_name as last_nam3_1_0_ from persons person0_ where person0_.id=?
+2020-08-27 00:57:18,356 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-4] get Person First Name::
+2020-08-27 00:57:18,356 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-4] exiting getPersonById()
+2020-08-27 00:57:18,369 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] entering updatePerson(Long,Person)
+2020-08-27 00:57:18,369 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] id: 1
+2020-08-27 00:57:18,370 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] Person: com.org.app.model.Person@31d3d165
+2020-08-27 00:57:18,371 DEBUG o.h.SQL [http-nio-auto-1-exec-5] select person0_.id as id1_1_0_, person0_.first_name as first_na2_1_0_, person0_.last_name as last_nam3_1_0_ from persons person0_ where person0_.id=?
+2020-08-27 00:57:18,372 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] Update Person details of given Id ::
+2020-08-27 00:57:18,372 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] exiting updatePerson()
+2020-08-27 00:57:18,384 DEBUG o.h.SQL [http-nio-auto-1-exec-5] update persons set first_name=?, last_name=? where id=?
+2020-08-27 00:57:18,413 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] entering getPersonById(long)
+2020-08-27 00:57:18,414 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] id: 1
+2020-08-27 00:57:18,416 DEBUG o.h.SQL [http-nio-auto-1-exec-5] select person0_.id as id1_1_0_, person0_.first_name as first_na2_1_0_, person0_.last_name as last_nam3_1_0_ from persons person0_ where person0_.id=?
+2020-08-27 00:57:18,417 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] get Person First Name::
+2020-08-27 00:57:18,418 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-5] exiting getPersonById()
+2020-08-27 00:57:18,435 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-6] entering getPersonById(long)
+2020-08-27 00:57:18,435 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-6] id: 2
+2020-08-27 00:57:18,438 DEBUG o.h.SQL [http-nio-auto-1-exec-6] select person0_.id as id1_1_0_, person0_.first_name as first_na2_1_0_, person0_.last_name as last_nam3_1_0_ from persons person0_ where person0_.id=?
+2020-08-27 00:57:18,440 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-6] exiting getPersonById()
+2020-08-27 00:57:18,440 DEBUG c.o.a.c.PersonController [http-nio-auto-1-exec-6] returning: <404 NOT_FOUND Not Found,[]>
+2020-08-27 00:57:18,869 DEBUG o.h.SQL [SpringContextShutdownHook] drop table if exists address CASCADE 
+2020-08-27 00:57:18,882 DEBUG o.h.SQL [SpringContextShutdownHook] drop table if exists persons CASCADE 
+2020-08-27 00:57:18,886 DEBUG o.h.SQL [SpringContextShutdownHook] drop sequence if exists hibernate_sequence
